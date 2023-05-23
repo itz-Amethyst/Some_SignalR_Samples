@@ -1,3 +1,5 @@
+using WhiteBoard.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,8 +24,8 @@ app.UseRouting();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapHub<>('/draw');
-})
+    endpoints.MapHub<DrawHub>("/draw");
+});
 
 app.MapRazorPages();
 
